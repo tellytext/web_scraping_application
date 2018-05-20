@@ -1,0 +1,18 @@
+{% extends "header.html" %}
+
+{% block body %}
+<body>
+
+  <div class="container">
+  <br>
+  <h4>Please submit query:</h4>
+  <br>
+	  <form action="" class="form-inline" method="post">
+	    <input type="text" class="form-control" placeholder="Search Query" name="searchquery" value="{{request.form.searchquery}}">
+	    <input class="btn btn-primary" type="submit" value="Search">
+	  </form>
+      <h4>{{ error }}</h4>
+  </div>
+
+</body>
+{% endblock %}

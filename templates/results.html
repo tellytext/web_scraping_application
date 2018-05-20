@@ -1,0 +1,24 @@
+{% extends "header.html" %}
+
+
+{% block body %}
+
+<div class="jumbotron" style="margin-top: 15px; margin-bottom: 5px" align="left">
+	<div class="container" style="margin-right: 15px; margin-bottom: 5px;">
+	  <h1 class="display-4">Search Query: {{ query }}</h1>
+	  <p class="lead">Results for search query:</p>
+		<hr class="my-4">
+		<a class="btn btn-primary btn-lg" href="/search/" role="button">Search Again</a>
+	</div>
+
+		{% if results == "No paid search results found" %}
+			<p>{{ results }}</p>
+		{% else %}
+			{% for result in results %}
+				<div class="alert alert-warning" role="alert">
+				  <p>Search Term: {{ result[0] }} | Headline: {{ result[1] }} | Description: {{ result[2] }} | Display URL: {{ result[3] }} | Position: {{ result[4] }} | Time Stamp: {{ result[5] }}</p>
+				</div>
+			{% endfor %}
+		{% endif %}
+</div>
+{% endblock %}
